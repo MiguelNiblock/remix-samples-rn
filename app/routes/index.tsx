@@ -1,4 +1,5 @@
 import { Link } from "@remix-run/react";
+import { Box } from "native-base";
 
 import { useOptionalUser } from "~/utils";
 
@@ -23,6 +24,7 @@ export default function Index() {
                   Grunge Stack
                 </span>
               </h1>
+              <Box>HELLO WORLD FROM NATIVE BASE</Box>
               <p className="mx-auto mt-6 max-w-lg text-center text-xl text-white sm:max-w-3xl">
                 Check the README.md file for instructions on how to get this
                 project deployed.

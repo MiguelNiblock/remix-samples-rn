@@ -1,5 +1,6 @@
 import type { EntryContext } from "@remix-run/node";
 import { RemixServer } from "@remix-run/react";
+import { NativeBaseProvider } from "native-base";
 import { renderToString } from "react-dom/server";
 
 export default function handleRequest(
@@ -9,7 +10,9 @@ export default function handleRequest(
   remixContext: EntryContext
 ) {
   const markup = renderToString(
-    <RemixServer context={remixContext} url={request.url} />
+    <NativeBaseProvider>
+      <RemixServer context={remixContext} url={request.url} />
+    </NativeBaseProvider>
   );
 
   responseHeaders.set("Content-Type", "text/html");
